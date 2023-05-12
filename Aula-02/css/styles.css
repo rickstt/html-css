@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+header {
+    /*Largura do header*/
+    width: 100%;
+    /*altura do header*/
+    height: 827px;
+    /*Aplicar uma imagem de fundo com o comando background-image*/
+    background-image:url("../images/bg-senac.png");
+    /*Não repetir a imagem de fundo*/
+    background-repeat: no-repeat;
+    /*alterar o tamanho da imagem de fundo*/
+    background-size: cover;
+    /*alterar a posição do plano de fundo.
+    O primeiro elemento é a posição x e segundo a posição y
+    background-position: 0 -200px*/
+
+    /*Vamos dispor(display) o conteúdo de forma fexível*/
+    display: flex;
+}
+
+header .right_panel {
+    font-size: 290pt;
+    color: #ffeae7;
+    transform: rotate(-90deg);
+    letter-spacing: -40px;
+    font-weight: bold;
+    flex: 1;
+    height: 300px;
+    margin-top: 260px;
+    margin-right: -128px;
+}
+header .left_panel {
+    flex: 2;
+    margin-top: 300px;
+    margin-left: 600px;
+    font-weight: bold;
+    font-size: 20pt;
+    color: #ffeae7;
+}
+header .left_panel h2 {
+    padding-top: 5px;
+}
+header .icons svg {
+    margin: 5px;
+    padding-top: 5px;
+}
+header .left_panel h4 {
+    font-size: medium;
+    font-weight: lighter;
+    padding-top: 5px;
+}
+
+header .qrcode {
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 885px;
+}
+header .qrcode img {
+    object-fit: scale-down;
+    width: 260px;
+    height: 260px;
+    
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #ffeae7;
+}
