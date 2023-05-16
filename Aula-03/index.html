@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | </title>
+</head>
+<body>
+    <header>
+        <h1>Cadastro</h1>
+    </header>
+    <main>
+        <form action="confirmar.html" method="post" class="frmCadastro" enctype="multipart/form-data">
+            <section class="login">
+                <label for="txtusuario">Usuário</label>
+                <input type="text" name="txtusuario" id="txtusuario" placeholder="Digite o nome de usuário" minlength="3" required autocomplete="off">
+
+                <label for="senhausuario">Senha</label>
+                <input type="password" name="senhausuario" id="senhausuario" placeholder="Digite sua senha" minlength="5" required>
+
+                <label for="confirmarsenhausuario">Confirmar Senha</label>
+                <input type="password" name="confirmarsenhausuario" id="confirmarsenhausuario" placeholder="Confirme sua senha" minlength="5" required>
+
+                <label for="cbonivel">Acesso</label>
+                <select id="cbonivel">
+                    <option value="Null">Selecione</option>
+                    <option value="Admin">Administrador</option>
+                    <option value="User">Usuário</option>
+                    <option value="Guess">Convidado</option>
+                </select>
+            </section>
+
+            <section class="dadospessoais">
+                <label for="txtnomecompleto">Nome Completo</label>
+                <input type="text" name="txtnomecompleto" id="txtnomecompleto" placeholder="Informe o nome e sobrenome" minlength="5" maxlength="50" autocomplete="off" required>
+
+                <label for="txtcpf">CPF</label>
+                <input type="text" name="txtcpf" id="txtcpf" placeholder="Digite apenas números" maxlength="11" autocomplete="off" pattern="[0-9]{11}" required>
+
+                <label for="txtnascimento">Data de Nascimento</label>
+                <input type="date" name="txtnascimento" id="txtnascimento" required >
+
+                <label for="nomemae">Nome da Mãe</label>
+                <input type="text" name="nomemae" id="nomemae" placeholder="Digite o nome da mãe" minlength="5" maxlength="50" autocomplete="off" required> 
+
+                <label for="optestadocivil">Estado Civíl</label>
+                <input type="radio" name="optestadocivil" id="optestadocivil" value="Solteiro(a)">Solteiro(a)
+                <input type="radio" name="optestadocivil" id="optestadocivil" value="Casado(a)">Casado(a)
+                <input type="radio" name="optestadocivil" id="optestadocivil" value="Viuvo(a)">Viuvo(a)
+                <input type="radio" name="optestadocivil" id="optestadocivil" value="Divorciado(a)" >Divorciado(a)
+
+                <label for="optsexo">Sexo</label>
+                <input type="radio" name="optsexo" id="optsexo" value="Masculino">Masculino
+                <input type="radio" name="optsexo" id="optsexo" value="Feminino">Feminino
+                <input type="radio" name="optsexo" id="optsexo" value="n/a">Prefiro não informar
+            </section>
+
+            <section class="endereco">
+                <label for="cbotipo">Tipo</label>
+                <select name="cbotipo" id="cbotipo">
+                    <option value="Null">Selecione</option>
+                    <option value="Rua">Rua</option>
+                    <option value="Avenida">Avenida</option>
+                    <option value="Travessa">Travessa</option>
+                    <option value="Alameda">Alameda</option>
+                    <option value="Praça">Praça</option>
+                    <option value="Estrada">Estrada</option>
+                    <option value="Viela">Viela</option>
+                </select>
+
+                <label for="txtlogradouro">Logradouro</label>
+                <input type="text" name="txtlogradouro" id="Logradouro" placeholder="Informe o nome do local" required>
+
+                <label for="txtnumero">Número</label>
+                <input type="text" name="txtnumero" id="txtnumero" maxlength="10" required>
+
+                <label for="txtcomplemento">Complemento</label>
+                <input type="text" name="txtcomplemento" id="txtcomplemento">
+
+                <label for="txtcep">CEP</label>
+                <input type="text" name="txtcep" id="txtcep" placeholder="Digite o CEP do local" pattern="[0-9]{11}" required>
+
+                <label for="txtbairro">Bairro</label>
+                <input type="text" name="txtbairro" id="txtbairro" placeholder="Informe o bairro" required>
+            </section>
+
+            <section class="contato">
+                <label for="txtemail">Email</label>
+                <input type="email" name="txtemail" id="txtemail" placeholder="Digite seu melhor email" required>
+
+                <label for="txttelefone">Telefone</label>
+                <input type="tel" name="txttelefone" id="txttelefone" placeholder="Digite seu número de telefone" required>
+
+                <label for="txtinstagram">Instagram</label>
+                <input type="text" name="txtinstagram" id="txtinstagram" placeholder="Informe o @ de sua rede social">
+
+                <label for="txttwitter">Twitter</label>
+                <input type="text" name="txttwitter" id="txtttwiter" placeholder="Informe o @ de sua rede social">
+            </section>
+
+            <section class="interesses">
+                <label for="chkinteresses">Interesses</label>
+                <input type="checkbox" name="chkinteresses" id="chkinteresses">Esportes
+                <input type="checkbox" name="chkinteresses1" id="chkinteresses1">Cinema
+                <input type="checkbox" name="chkinteresses2" id="chkinteresses3">Arte
+                <input type="checkbox" name="chkinteresses4" id="chkinteresses4">Música
+                <input type="checkbox" name="chkinteresses5" id="chkinteresses5">Jogos
+                <input type="checkbox" name="chkinteresses6" id="chkinteresses6">Animais
+
+                <label for="txtoutros">Adicione outros interesses</label>
+                <textarea name="txtoutros" id="txtoutros" cols="30" rows="10"></textarea>
+            </section>
+            <input type="submit" value=" Login">
+        </form>
+    </main>
+</body>
+</html>
