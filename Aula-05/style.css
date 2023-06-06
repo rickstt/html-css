@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 body {
     font-family: 'Source Code Pro', monospace;
@@ -13,7 +14,7 @@ body {
     display: flex;
 }
 main {
-    margin: 50px auto;
+    margin: 45px auto;
 }
 .bglogin {
     width: 1050px;
@@ -59,7 +60,7 @@ input {
     margin-bottom: 30px;
     padding-left: 45px;
 }
-input[type=email]:focus {
+input[type=text]:focus {
     border-color: dodgerblue;
     box-shadow: 0 0 8px 0 dodgerblue;
 }
@@ -68,17 +69,17 @@ input[type=password]:focus {
     box-shadow: 0 0 8px 0 dodgerblue;
 }
 
-.inputsvgemail svg {
+.inputsvguser svg {
     position: absolute;
     left: 400px;
-    top: 415px;
+    top: 410px;
     padding: 9 10px;
     transition: 3s;
 }
 .inputsvgsenha svg {
     position: absolute;
     left: 400px;
-    top: 490px;
+    top: 485px;
     padding: 9 10px;
     transition: 3s;
 }
@@ -112,7 +113,7 @@ button {
 .logingoogle svg {
     position: absolute;
     left: 480px;
-    top: 291px;
+    top: 286px;
     padding: 9 10px;
     transition: 3s;
 }
@@ -141,13 +142,13 @@ a{
     margin-top: -20px;
     padding-bottom: 30px;
 }
-.sigin {
+.sigup {
     margin-left: 155px;
 }
-.sigin h5 {
+.sigup h5 {
     font-weight: 600;
 }
-.sigin a {
+.sigup a {
     color: #1077ec;
 }
 
@@ -165,13 +166,14 @@ a{
     position: relative;
     display: inline-block;
     outline: none;
+    z-index: 0;
   }
   
 
 .btn-15 {
     background: #1f1f1f;
     border: none;
-    z-index: 1;
+    z-index: 0;
     width: 320px;
     height: 45px;
   }
@@ -185,8 +187,7 @@ a{
     z-index: -1;
     background-color: #2fe767;
     border-radius: 5px;
-     
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
   }
   .btn-15:hover {
     color: #fff;
@@ -198,3 +199,51 @@ a{
   .btn-15:active {
     top: 2px;
   }
+
+#shadow {
+    background-color: rgba(0,0,0,0.62);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: -100;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+#shadow div {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 40%;
+    padding: 20px;
+    margin: 10% auto 10% auto;
+    height: 51.9%;
+}
+#fechar {
+    position: absolute;
+    right: 32%;
+    top: 23%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 60px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 27pt;
+    text-align: center;
+}
+#shadow a.btn-15::after {
+    background-color: #e72f2f;
+}
+
+#shadow input {
+    margin-top: 5px;
+    margin-left: 23%;
+    padding-left: 20px;
+}
+input[type=file]{
+    padding-left: 0;
+    padding-top: 11px;
+}
+#shadow button {
+    margin-left: 23%;
+}
