@@ -91,3 +91,26 @@ btnCad.onclick = () => {
         }).catch((error) => console.error(`Erro ao cadastrar -> ${error}`));
     }
 }
+
+//
+function carregarDados() {
+    const estrutura = document.getElementById("estrutura");
+    fetch("http://127.0.0.1:8087/users/list").then((response) => response.json()).then((result) => {
+        result.data.map((item, index) => {
+            let divUser = document.createElement("div");
+            divUser.setAttribute("class", "divUser");
+            divUser.innerHTML=`
+                <img src="assets/tuxavatar.png">
+                <h3>${item.idusuario}</h3>
+                <h2>${item.nomeusuario}</h2>
+                <h3>${item.email}<h3>
+                <a href="#" onclick="editar('${item.idusuario}', '${item.nomeusuario}')"><img src="assets/editar.jpg"></a>
+            `;
+            estrutura.appendChild(divUser);
+        })
+    }).catch((error) => console.log(`Erro ao executar API -> ${error}`))
+}
+
+function editar(id, usuario) {
+    alert(`O id é ${id} e o nome é ${usuario}`);
+}
