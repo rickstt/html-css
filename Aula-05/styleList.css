@@ -5,8 +5,7 @@
 }
 body {
     font-family: 'Source Code Pro', monospace;
-    background: rgb(144,161,196);
-    background: linear-gradient(342deg, rgba(144,161,196,1) 0%, rgba(255,255,255,1) 100%);
+    background-color: #93BFB7;
     background-repeat: no-repeat;
     height: 100vh;
 }
@@ -21,7 +20,7 @@ header h1 {
 }
 .divUser {
     display: flex;
-    background-color: rgb(248, 248, 248);
+    background-color: #f1f1f1;
     margin: 15px auto 15px auto;
     width: 100%;
     border-radius: 12px;
@@ -51,3 +50,64 @@ header h1 {
     width: 68px;
     height: 40px;
 }
+
+input {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    width: 320px;
+    height: 45px;
+    background-color: #ddd;
+    transition: .3s;
+    margin-left: 110px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+input[type=text]:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
+input[type=password]:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
+input[type=email]:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
+input[type=file]{
+    padding-left: 15px;
+    padding-top: 11px;
+}
+input[type=submit]{
+    color: #fff;
+    background-color: #387373;
+    border-radius: 10px;
+    transition: all 0.6s ease;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #54a8a8;
+}
+
+#div_shadow {
+    background-color: rgba(0,0,0,0.62);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+#div_shadow div {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 40%;
+    padding: 20px;
+    padding-left: 40px;
+    margin: 7% auto 7% auto;
+    height: 68%;
+}
+
