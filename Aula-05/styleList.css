@@ -111,3 +111,23 @@ input[type=submit]:hover {
     height: 68%;
 }
 
+#fechar {
+    position: absolute;
+    right: 32%;
+    top: 23%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 60px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 27pt;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+a {
+    text-decoration: none;
+}
+
+#fechar:hover {
+    background-color: #54a8a8;
+}

@@ -101,7 +101,14 @@ function carregarDados() {
     key = window.location.search.substring(5,window.location.search.length);
 
     const estrutura = document.getElementById("estrutura");
-    fetch("http://127.0.0.1:8087/users/list").then((response) => response.json()).then((result) => {
+    fetch("http://127.0.0.1:8087/users/list",{
+        method: "GET",    
+        headers: {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "token": key
+        }
+    }).then((response) => response.json()).then((result) => {
         result.data.map((item, index) => {
             let divUser = document.createElement("div");
             divUser.setAttribute("class", "divUser");
@@ -130,12 +137,20 @@ function editar(id, usuario, email, foto) {
     const input_email = document.createElement("input");
     const input_file = document.createElement("input");
     const input_sub = document.createElement("input");
+    const fechar = document.createElement("a");
 
     //Aplicar atributos aos elementos
     div_shadow.setAttribute("id","div_shadow");
     div_white.setAttribute("id","div_white");
+    fechar.setAttribute("href", "#");
+    fechar.setAttribute("id","fechar");
+    fechar.setAttribute("onclick","fecharFormAtualizar()");
+    fechar.innerHTML="&times;";
+
+
     //atributo para não enviar o formulário, o envio será feito via JS
     form.setAttribute("onsubmit","return false");
+
     //Aplicar atributos as caixas de input
     input_id.setAttribute("type", "text");
     input_id.setAttribute("placeholder", `Id do Usuário: ${id}`);
@@ -152,6 +167,7 @@ function editar(id, usuario, email, foto) {
 
     input_email.setAttribute("type", "email");
     input_email.setAttribute("placeholder", `${email}`)
+    input_email.setAttribute("value", `${email}`);
 
     input_file.setAttribute("type",  "file");
     input_file.setAttribute("value", `${foto}`);
@@ -176,7 +192,7 @@ function editar(id, usuario, email, foto) {
                     email: input_email.value,
                     foto: input_file.value
                 })
-            });
+            }).then((response) => response.json()).then((dados) => alert(`${dados.output}`)).catch((error) => console.error(`Erro ao ler API -> ${error}`))
         }
     }
 
@@ -188,7 +204,14 @@ function editar(id, usuario, email, foto) {
     form.appendChild(input_file);
     form.appendChild(input_sub);
     div_white.appendChild(form);
+    div_white.appendChild(fechar);
     div_shadow.appendChild(div_white);
     body.appendChild(div_shadow);
 
+}
+
+function fecharFormAtualizar() {
+    document.getElementById("div_shadow").style.zIndex = "-100";
+    document.getElementById("div_shadow").style.opacity = "0";
+    window.location.reload();
 }
